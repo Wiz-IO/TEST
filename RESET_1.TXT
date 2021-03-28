@@ -1,0 +1,219 @@
+Hello World
+LOOP
+USBD Bus Reset
+
+USBD Setup Received 80 06 00 01 00 00 40 00
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+USBD Bus Reset
+
+USBD Setup Received 00 05 09 00 00 00 00 00
+  Set Address
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 80 06 00 01 00 00 12 00
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 02 00 00 FF 00
+  Get Descriptor Configuration[0]
+  Queue EP 80 with 64 bytes
+USBD Xfer Complete on EP 80 with 64 bytes
+  Queue EP 80 with 20 bytes
+USBD Xfer Complete on EP 80 with 20 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 03 03 09 04 FF 00
+  Get Descriptor String[3]
+  Queue EP 80 with 26 bytes
+USBD Xfer Complete on EP 80 with 26 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 03 00 00 FF 00
+  Get Descriptor String[0]
+  Queue EP 80 with 4 bytes
+USBD Xfer Complete on EP 80 with 4 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 02 03 09 04 FF 00
+  Get Descriptor String[2]
+  Queue EP 80 with 10 bytes
+USBD Xfer Complete on EP 80 with 10 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 06 00 00 0A 00
+  Get Descriptor Device Qualifier
+  Stall EP0
+
+USBD Setup Received 80 06 00 01 00 00 12 00
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 02 00 00 09 00
+  Get Descriptor Configuration[0]
+  Queue EP 80 with 9 bytes
+USBD Xfer Complete on EP 80 with 9 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 02 00 00 54 00
+  Get Descriptor Configuration[0]
+  Queue EP 80 with 64 bytes
+USBD Xfer Complete on EP 80 with 64 bytes
+  Queue EP 80 with 20 bytes
+USBD Xfer Complete on EP 80 with 20 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 00 09 01 00 00 00 00 00
+  Set Configuration
+  Open EP 81 with Size = 8
+  Open EP 02 with Size = 64
+  Open EP 82 with Size = 64
+  Queue EP 02 with 64 bytes ... OK
+  CDC opened
+process_set_config 854: assert failed
+process_control_request 645: assert failed
+  Stall EP0
+USBD Bus Reset
+
+USBD Setup Received 80 06 00 01 00 00 40 00
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+USBD Bus Reset
+
+USBD Setup Received 00 05 09 00 00 00 00 00
+  Set Address
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 80 06 00 01 00 00 12 00
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 01 00 00 12 00
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 02 00 00 09 00
+  Get Descriptor Configuration[0]
+  Queue EP 80 with 9 bytes
+USBD Xfer Complete on EP 80 with 9 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 02 00 00 54 00
+  Get Descriptor Configuration[0]
+  Queue EP 80 with 64 bytes
+USBD Xfer Complete on EP 80 with 64 bytes
+  Queue EP 80 with 20 bytes
+USBD Xfer Complete on EP 80 with 20 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 00 09 01 00 00 00 00 00
+  Set Configuration
+  Open EP 81 with Size = 8
+  Open EP 02 with Size = 64
+  Open EP 82 with Size = 64
+  Queue EP 02 with 64 bytes ... OK
+  CDC opened
+process_set_config 854: assert failed
+process_control_request 645: assert failed
+  Stall EP0
+USBD Bus Reset
+
+USBD Setup Received 80 06 00 01 00 00 40 00
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+USBD Bus Reset
+
+USBD Setup Received 00 05 09 00 00 00 00 00
+  Set Address
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 80 06 00 01 00 00 12 00
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 01 00 00 12 00
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 02 00 00 09 00
+  Get Descriptor Configuration[0]
+  Queue EP 80 with 9 bytes
+USBD Xfer Complete on EP 80 with 9 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 02 00 00 54 00
+  Get Descriptor Configuration[0]
+  Queue EP 80 with 64 bytes
+USBD Xfer Complete on EP 80 with 64 bytes
+  Queue EP 80 with 20 bytes
+USBD Xfer Complete on EP 80 with 20 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 00 09 01 00 00 00 00 00
+  Set Configuration
+  Open EP 81 with Size = 8
+  Open EP 02 with Size = 64
+  Open EP 82 with Size = 64
+  Queue EP 02 with 64 bytes ... OK
+  CDC opened
+process_set_config 854: assert failed
+process_control_request 645: assert failed
+  Stall EP0
+USBD Bus Reset
+
+USBD Setup Received 80 06 00 01 00 00 40 00
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+USBD Bus Reset
+
+USBD Setup Received 00 05 09 00 00 00 00 00
+  Set Address
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 80 06 00 01 00 00 12 00
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with zlp Status
+USBD Xfer Complete on EP 00 with 0 bytes
+LOOP
