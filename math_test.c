@@ -34,12 +34,12 @@ static void test_dis(void)
     float dst;
     // test: float as arguments
     dst = get_distance(lat1, lng1, lat2, lng2);
-    printf("dst = %0.3fkm\r\n", dst); //dst = 9.281km
+    printf("[6] dst = %0.3fkm\r\n", dst); 
 }
 
 void test_float(void)
 {
-    puts("[TEST-FLOAT] BEGIN\r\n");
+    puts("[TEST-MATH] BEGIN\r\n");
     double a, b, s, pos;
     double radLat1 = 31.11;
     double radLat2 = 121.29;
@@ -49,16 +49,32 @@ void test_float(void)
     double sum = deg + sec;
     sec = round(lat);
     lat += sec;
-    printf("sum=%f\r\n", lat + deg);
-    printf("atof1=%.3f atof2=%f var=%f sum=%f\r\n", lat, deg, sec, sum);
-    printf("atof1=%.3f atof2=%f var=%f\r\n", lat, deg, sec); //Works OK, prints: "atof1=58.123 atof2=0.567800 var=58.000000"
+    printf("[0] sum = %f\r\n", lat + deg);
+    printf("[1] atof1 = %.3f atof2 = %f var = %f sum = %f\r\n", lat, deg, sec, sum);
+    printf("[2] atof1 = %.3f atof2 = %f var = %f\r\n", lat, deg, sec);
     a = sin(45.0);
     b = cos(30.0);
     s = sqrt(81);
     pos = 2 * asin(sqrt(pow(sin(a / 2), 2) + cos(radLat1) * cos(radLat2) * pow(sin(b / 2), 2)));
-    printf("Float test, a=%.2f,b=%.2f,radLat1=%.3f,radLat2=%.3f, s=%.5f\r\n", a, b, radLat1, radLat2, s);
-    printf("Float test, pos=%g\r\n", pos);
-    sprintf(m_strTemp, "Float test, a=%.2f,b=%.2f,radLat1=%.3f,radLat2=%.3f, s=%.5f\r\n", a, b, radLat1, radLat2, s);
+    printf("[3] a = %.2f, b = %.2f, radLat1 = %.3f, radLat2 = %.3f, s = %.5f\r\n", a, b, radLat1, radLat2, s);
+    printf("[4] pos = %g\r\n", pos);
+    sprintf(m_strTemp, "[5] a = %.2f, b = %.2f, radLat1 = %.3f, radLat2 = %.3f, s = %.5f\r\n", a, b, radLat1, radLat2, s);
     printf(m_strTemp);
-    puts("[TEST-FLOAT] END\r\n");
+    test_dis();
+    puts("[TEST-MATH] END\r\n");
 }
+
+/*
+gcc.exe (MinGW.org GCC-8.2.0-3) 8.2.0
+
+[TEST-MATH] BEGIN
+[0] sum = 116.691290
+[1] atof1 = 116.123 atof2 = 0.567800 var = 58.000000 sum = 10.567800
+[2] atof1 = 116.123 atof2 = 0.567800 var = 58.000000
+[3] a = 0.85, b = 0.15, radLat1 = 31.110, radLat2 = 121.290, s = 9.00000
+[4] pos = 0.845889
+[5] a = 0.85, b = 0.15, radLat1 = 31.110, radLat2 = 121.290, s = 9.00000
+[6] dst = 9.282km
+[TEST-MATH] END
+
+*/
