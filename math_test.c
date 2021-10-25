@@ -39,7 +39,7 @@ static void test_dis(void)
 
 void test_float(void)
 {
-    puts("[TEST-MATH] BEGIN\r\n");
+    puts("[TEST-MATH] BEGIN\r\n"); // test puts()
     double a, b, s, pos;
     double radLat1 = 31.11;
     double radLat2 = 121.29;
