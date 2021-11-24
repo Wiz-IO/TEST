@@ -23,12 +23,12 @@ static inline bool LCDIF_isRunning(void)
 static inline bool LCDIF_isBusy(void)
 {
     uint16_t reg = LCDIF_INTSTA; // auto clear
-    LCDIF_START = 0;
-    if (reg & LCDIF_CPL) // frame transfer is completed
-        return false;
-    if (reg)
+    if (reg & LCDIF_CPL)         // frame transfer is completed
+    {
         LCDIF_START = 0;
-    return LCDIF_START;
+        return false;
+    }
+    return reg;
 }
 
 void LCDIF_Run(bool wait)
@@ -176,6 +176,6 @@ void LCD_draw_imageRect(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint
 
 void LCD_draw_image(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t *data)
 {
-    LCDIF_WROI_BGCLR = rand();
+    LCDIF_WROI_BGCLR = rand(); // only for test 
     LCD_draw_imageRect(x, y, x + w - 1, y + h - 1, data);
 }
