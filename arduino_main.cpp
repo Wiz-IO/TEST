@@ -3,22 +3,6 @@ extern "C"
 {
 #endif
 
-    //#include <stddef.h>
-    //#include <stdint.h>
-    //#include "preserve.h"
-    //#include "cmsis_rpc.h"
-    //#include "cmsis_os2.h"
-    //#include "dma.h"
-    //#include "uart.h"
-    //#include "eflash.h"
-    //#include "aio_manager.h"
-    //#include "neul_socket.h"
-    //#include "neul_kv_storage.h"
-    //#include "neul_io_bank.h"
-    //#include "irmalloc.h"
-    //#include "gpio.h"
-    //#include "rtc.h"
-
 #include "platform.h"
 #include "hal.h"
 #include "neulfw.h"
@@ -171,15 +155,3 @@ int main(void)
     osThreadNew(app_main_task, 0, &app_task_attr);
     return osKernelStart();
 }
-
-////// NOTES //////////////////////////////////////////////////
-
-/* MEMORY */
-//void *irmalloc(size_t size);
-//void *irzalloc(size_t size);
-//void *irrealloc(void *buf, size_t size);
-//void irfree(void * buf);
-
-/* TIME */
-//osStatus_t osDelay (uint32_t ticks);
-//uint64_t osKernelGetTick2ms(void);
