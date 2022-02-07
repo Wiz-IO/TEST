@@ -12,7 +12,7 @@ void setup()
     dev.waitPinReady();
 
     Serial.begin(115200);
-    printf("\n[APP] HiSilicon Hi2115 2022 Georgi Angelov\n\n");
+    Serial.println("\n[APP] HiSilicon Hi2115 2022 Georgi Angelov\n\n");
     pinMode(LED, OUTPUT);
 
     dev.getIMEI(imei);
