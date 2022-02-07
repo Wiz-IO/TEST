@@ -21,8 +21,8 @@ void setup()
     Serial.printf("[APP] IMSI: %s\n", imsi);
 
     // if(false == dev.waitRegistration()) reboot_system( REBOOT_CAUSE_APPLICATION_WATCHDOG );
-
     // TCP/IP is ready
+    
     Serial.printf("[APP] Active Time: %d\n", (int)dev.active_time);
     Serial.printf("[APP] Periodic TAU: %d\n", (int)dev.periodic_tau);
 }
