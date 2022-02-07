@@ -73,11 +73,12 @@ typedef struct
     void (*create_queue_fn_p)(void);
 } app_task_definition_t;
 
-#define APP_TASKS 2
+#define APP_TASKS 1
 
 app_task_definition_t app_tasks[APP_TASKS] = {
     {{"rpc", 0, NULL, 0, NULL, 430, osPriorityLow6, 0, 0}, rpc_main, NULL, rpc_interface_create_queue},
-    {{"log", 0, NULL, 0, NULL, 200, osPriorityLow2, 0, 0}, log_main, NULL, NULL},
+    
+    //{{"log", 0, NULL, 0, NULL, 200, osPriorityLow2, 0, 0}, log_main, NULL, NULL},
     //{{"iccid", 0, NULL, 0, NULL, 0x12C, osPriorityLow3, 0, 0}, iccid_register, NULL, NULL},
     //{{"dns", 0, NULL, 0, NULL, 0x12C, osPriorityLow3, 0, 0}, dns_main, NULL, dns_create_queue},
     //{{"dtls", 0, NULL, 0, NULL, 0x118, osPriorityLow5, 0, 0}, dtls_main, NULL, NULL},
@@ -120,7 +121,8 @@ void app_main_task(void *param)
     io_bank_init();           // PMU
     //eflash_init();          // exist ??? Initialise external flash
     neul_kv_cache_register(); // register cache to allow flusing on reboot
-    log_uart_enable();
+    
+    ////log_uart_enable();
 
     // ? ... need info
 
@@ -154,20 +156,23 @@ int main(void)
 {
     preserve_init();
     hw_init();
-    log_init();
+
+    ////log_init();
+
     osKernelInitialize();
 
-    dma_init();
-    uart_init();
-    log_init_after_rtos();
-    log_uart_init_after_rtos(0);
+    ////dma_init();
+    ////uart_init();
+    ////log_init_after_rtos();
+    ////log_uart_init_after_rtos(0);
+
     socket_init();
     rpc_init();
     neul_kv_init();
     aio_manager_init(); // analog
 
     app_os_init();
-
+    osThreadNew(app_main_task, 0, &app_task_attr);
     return osKernelStart();
 }
 
