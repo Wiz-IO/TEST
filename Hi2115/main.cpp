@@ -1,4 +1,4 @@
-// BIN FILE SIZE: 68 kB
+// BIN FILE SIZE: 53 kB
 
 #include <Arduino.h>
 
