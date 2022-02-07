@@ -1,4 +1,4 @@
-// BIN FILE SIZE: 71 kB
+// BIN FILE SIZE: 68 kB
 
 #include <Arduino.h>
 
@@ -12,7 +12,7 @@ void setup()
     dev.waitPinReady();
 
     Serial.begin(115200);
-    Serial.println("\n[APP] HiSilicon Hi2115 2022 Georgi Angelov\n\n");
+    Serial.println("\n[APP] HiSilicon Hi2115 2022 Georgi Angelov\n");
     pinMode(LED, OUTPUT);
 
     dev.getIMEI(imei);
