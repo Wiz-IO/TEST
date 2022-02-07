@@ -167,7 +167,7 @@ int main(void)
     aio_manager_init(); // analog
 
     app_os_init();
-    osThreadNew(app_main_task, 0, &app_task_attr);
+
     return osKernelStart();
 }
 
