@@ -1,5 +1,5 @@
 
 void foo_test(void)
 {
-    do error;
+    generate error;
 }
