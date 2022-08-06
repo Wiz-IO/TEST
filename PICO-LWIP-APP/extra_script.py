@@ -5,24 +5,17 @@ from os.path import join
 Import('env')
 #env = DefaultEnvironment()
 
-print('--- ADD MODULES ---')
-
 OBJ_DIR = join( "$BUILD_DIR", 'EXTERNAL' )
-
-# PRE:SCRYPT - I have uninitialized platform variables
-# env.sdk ... 'SDK' is folder of last sdk version, can be changed with old sdk backup 'SDK120, 131 ...' 
-
-#SDK_DIR = join( env.framework_dir, env.sdk )
 SDK_DIR = join( env.PioPlatform().get_package_dir("framework-wizio-pico"), 'SDK' ) 
 
-
 #''' NOT WORK as POST:SCRYPT
-env.BuildSources( # add lwip/tftp 
+env.BuildSources( 
+    # add lwip/tftp from framework https://github.com/Wiz-IO/framework-wizio-pico/tree/main/SDK/lib/lwip/src/apps/tftp
     join( OBJ_DIR, 'lwip', 'tftp' ),                      
     join( SDK_DIR, 'lib', 'lwip', 'src', 'apps', 'tftp' ),   
     "+<*>"
 )
-env.BuildSources( # just for test, code from project 
+env.BuildSources( # just for test, code from project folder 
     join(OBJ_DIR, "code"),
     join("$PROJECT_DIR", "code"),
     "+<*>"
@@ -30,7 +23,7 @@ env.BuildSources( # just for test, code from project
 #'''
 
 
-''' WORK as PRE & POST
+''' WORK as PRE and POST script
 libs = []
 libs.append( env.BuildLibrary(
     join( OBJ_DIR, 'LIB', 'tftp' ),                      
@@ -42,7 +35,3 @@ libs.append( env.BuildLibrary( # just for test, code from project
 ))
 env.Prepend(LIBS=libs)
 #'''
-
-
-#print('--- END MODULES ---')
-#print( env.Dump() )
