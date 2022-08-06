@@ -7,49 +7,42 @@ Import('env')
 
 print('--- ADD MODULES ---')
 
-OBJ_DIR = join( "$BUILD_DIR", env.platform )
-SDK_DIR = join( env.framework_dir, env.sdk )
+OBJ_DIR = join( "$BUILD_DIR", 'EXTERNAL' )
 
-#print( join( OBJ_DIR, 'lwip', 'tftp' ) )
-#print( join( SDK_DIR, 'lib', 'lwip', 'src', 'apps', 'tftp' ) ) # PATH is OK   
+# PRE:SCRYPT - I have uninitialized platform variables
+# env.sdk ... 'SDK' is folder of last sdk version, can be changed with old sdk backup 'SDK120, 131 ...' 
 
-''' NOT WORK
+#SDK_DIR = join( env.framework_dir, env.sdk )
+SDK_DIR = join( env.PioPlatform().get_package_dir("framework-wizio-pico"), 'SDK' ) 
+
+
+#''' NOT WORK as POST:SCRYPT
 env.BuildSources( # add lwip/tftp 
     join( OBJ_DIR, 'lwip', 'tftp' ),                      
     join( SDK_DIR, 'lib', 'lwip', 'src', 'apps', 'tftp' ),   
     "+<*>"
 )
-'''
-
-''' NOT WORK
 env.BuildSources( # just for test, code from project 
     join(OBJ_DIR, "code"),
     join("$PROJECT_DIR", "code"),
     "+<*>"
 )
-'''
+#'''
 
-#''' WORK
+
+''' WORK as PRE & POST
 libs = []
 libs.append( env.BuildLibrary(
-    join( OBJ_DIR, 'MODULES', 'tftp' ),                      
+    join( OBJ_DIR, 'LIB', 'tftp' ),                      
     join( SDK_DIR, 'lib', 'lwip', 'src', 'apps', 'tftp' ),   
 ))
 libs.append( env.BuildLibrary( # just for test, code from project
-    join(OBJ_DIR, "MODULES", "code"),
+    join(OBJ_DIR, "LIB", "code"),
     join("$PROJECT_DIR", "code"),
 ))
 env.Prepend(LIBS=libs)
 #'''
 
 
-
-#env.Append(CPPDEFINES='WIZIO_TEST') # WORK
-
-# executed before Linking
-#env.AddPreAction( "$BUILD_DIR/${PROGNAME}.elf", env.VerboseAction(" ".join([ "notepad" ]), "Open $PROJECT_DIR ") ) # WORK
-
-
-
-print('--- END MODULES ---')
+#print('--- END MODULES ---')
 #print( env.Dump() )
