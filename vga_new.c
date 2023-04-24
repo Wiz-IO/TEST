@@ -88,7 +88,7 @@ void __attribute__((vector(_OUTPUT_COMPARE_2_VECTOR), interrupt(IPL6SRS), nomips
 
 void vga_init()
 {
-    TRISECLR = 134; // TODO enable pixel ports
+    TRISECLR = 134; // TODO enable pixel ports LATE[0-7] for 256 colors
     V_INIT();       // H init in board.c
 
     IEC4CLR = _IEC4_DMA0IE_MASK;
