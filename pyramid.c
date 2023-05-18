@@ -49,3 +49,21 @@ int main(void)
     ROW[5] INDEX[3] = 10
     ROW[5] INDEX[4] = 5
 */
+
+
+void
+iso14443a_crc(uint8_t *pbtData, size_t szLen, uint8_t *pbtCrc)
+{
+  uint32_t wCrc = 0x6363;
+
+  do {
+    uint8_t  bt;
+    bt = *pbtData++;
+    bt = (bt ^ (uint8_t)(wCrc & 0x00FF));
+    bt = (bt ^ (bt << 4));
+    wCrc = (wCrc >> 8) ^ ((uint32_t) bt << 8) ^ ((uint32_t) bt << 3) ^ ((uint32_t) bt >> 4);
+  } while (--szLen);
+
+  *pbtCrc++ = (uint8_t)(wCrc & 0xFF);
+  *pbtCrc = (uint8_t)((wCrc >> 8) & 0xFF);
+}
