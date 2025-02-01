@@ -1,3 +1,8 @@
+## DeepSeek TEST:
+
+Write a program for GPS tracker, on Arduino, telemetry with MQTT, Quectel EC200E-EU module
+
+
 Creating a GPS tracker using an Arduino, the Quectel EC200E-EU module, and MQTT for telemetry involves several steps. Below is a basic example of how you can achieve this. This example assumes you have a basic understanding of Arduino programming, MQTT, and how to interface with the Quectel EC200E-EU module.
 
 ### Components Required:
