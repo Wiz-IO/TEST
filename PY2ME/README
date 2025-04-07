@@ -24,6 +24,7 @@
 - `<f` = 32-битов float (little-endian).
 - Офсетите са примерни и зависят от броя обекти и размера на предишните секции.
 
+```c
 #include <stdint.h>
 
 /*
@@ -90,3 +91,4 @@ void init_bin_file(BinFile* bin, uint8_t* data) {
     bin->names = bin->constants + bin->header.constants_size;
     bin->varnames = bin->names + bin->header.names_size;
 }
+```
